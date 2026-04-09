@@ -23,7 +23,11 @@ export function TransactionDetailPage() {
   if (!transaction) {
     return (
       <section className="transaction-detail-page">
-        <Link to="/" className="transaction-detail-page__back">
+        <Link
+          to="/"
+          className="transaction-detail-page__back"
+          aria-label="Back to transactions"
+        >
           <FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />
         </Link>
 
@@ -42,9 +46,12 @@ export function TransactionDetailPage() {
 
   return (
     <section className="transaction-detail-page">
-      <Link to="/" className="transaction-detail-page__back">
+      <Link
+        to="/"
+        className="transaction-detail-page__back"
+        aria-label="Back to transactions"
+      >
         <FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />
-        <span>Back</span>
       </Link>
 
       <header className="transaction-detail-page__hero">

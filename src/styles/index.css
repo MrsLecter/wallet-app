@@ -61,46 +61,40 @@ select {
 
 .transaction-detail-page {
   min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .transaction-detail-page__back {
-  width: fit-content;
+  width: 32px;
+  height: 32px;
   display: inline-grid;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 8px;
+  place-items: center;
   color: #1677ff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.125rem;
-}
-
-.transaction-detail-page__back span {
-  display: none;
+  border-radius: 999px;
 }
 
 .transaction-detail-page__back svg {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 }
 
 .transaction-detail-page__hero {
   display: grid;
   align-content: center;
   justify-items: center;
-  gap: 8px;
-  padding: 18px 0 0;
+  gap: 4px;
+  padding: 4px 0 18px;
   text-align: center;
 }
 
 .transaction-detail-page__amount {
   margin: 0;
-  font-size: clamp(4rem, 12vw, 5.25rem);
-  line-height: 0.95;
+  font-size: clamp(3.5rem, 15vw, 4.5rem);
+  line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   color: #000000;
 }
 
@@ -109,13 +103,14 @@ select {
   font-size: 1rem;
   line-height: 1.2;
   font-weight: 400;
-  color: #8d919b;
+  color: #8f8f98;
 }
 
 .transaction-detail-page__date {
   margin: 0;
   font-size: 1rem;
-  color: #8d919b;
+  line-height: 1.25;
+  color: #8f8f98;
 }
 
 .transaction-detail-page__empty {
@@ -126,25 +121,29 @@ select {
 
 .transaction-detail-card {
   display: grid;
-  gap: 14px;
-  padding: 22px 16px 18px;
-  border-radius: 18px;
+  gap: 0;
+  padding: 12px 14px 12px;
+  border-radius: 12px;
   background: #ffffff;
   color: #111111;
   box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  overflow: hidden;
 }
 
 .transaction-detail-card__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  align-items: start;
+  gap: 12px;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #ececf1;
 }
 
 .transaction-detail-card__status {
   margin: 0;
   font-size: 1rem;
   line-height: 1.3;
+  padding-bottom: 2px;
 }
 
 .transaction-detail-card__status-label,
@@ -162,10 +161,10 @@ select {
 
 .transaction-detail-card__description {
   margin: 0;
-  padding: 0 0 16px;
-  border-bottom: 1px solid #ececf1;
-  color: #8d919b;
+  padding: 0 0 12px;
+  color: #8f8f98;
   font-size: 1rem;
+  line-height: 1.3;
 }
 
 .transaction-detail-card__label {
