@@ -1,4 +1,7 @@
-import type { Transaction } from '../types';
+import {
+  TRANSACTION_ICON_BACKGROUNDS,
+} from '../constants';
+import type { BaseTransaction } from '../types';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -34,7 +37,15 @@ function formatDateTimeLabel(label: string, date: Date) {
   return `${label}, ${timeFormatter.format(date)}`;
 }
 
-export function formatTransactionAmount(transaction: Transaction) {
+const listFallbackDateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+export function formatTransactionAmount(
+  transaction: Pick<BaseTransaction, 'amount' | 'type'>,
+) {
   const formattedAmount = currencyFormatter.format(Math.abs(transaction.amount));
 
   if (transaction.type === 'payment') {
@@ -79,4 +90,45 @@ export function formatTransactionDetailDate(dateValue: string) {
   return fallbackDateFormatter
     .format(transactionDate)
     .replace(/,\s*/, ', ');
+}
+
+export function formatTransactionListDate(dateValue: string) {
+  const transactionDate = new Date(dateValue);
+
+  if (Number.isNaN(transactionDate.getTime())) {
+    return '';
+  }
+
+  const now = new Date();
+  const today = getStartOfDay(now);
+  const targetDay = getStartOfDay(transactionDate);
+  const millisecondsDiff = today.getTime() - targetDay.getTime();
+  const dayDiff = Math.round(millisecondsDiff / 86_400_000);
+
+  if (dayDiff === 0) {
+    return 'Today';
+  }
+
+  if (dayDiff === 1) {
+    return 'Yesterday';
+  }
+
+  if (dayDiff > 1 && dayDiff < 7) {
+    return weekdayFormatter.format(transactionDate);
+  }
+
+  return listFallbackDateFormatter.format(transactionDate);
+}
+
+export function getTransactionIconBackground(transactionId: string) {
+  const hash = transactionId
+    .split('')
+    .reduce(
+      (value, character) =>
+        (value * 31 + character.charCodeAt(0)) %
+        TRANSACTION_ICON_BACKGROUNDS.length,
+      0,
+    );
+
+  return TRANSACTION_ICON_BACKGROUNDS[hash];
 }

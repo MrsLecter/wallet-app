@@ -2,7 +2,9 @@ import type { Transaction } from '../types'
 
 import {
   formatTransactionAmount,
+  formatTransactionListDate,
   formatTransactionDetailDate,
+  getTransactionIconBackground,
   getTransactionStatusLabel,
 } from './transactions'
 
@@ -96,6 +98,55 @@ describe('transactions helpers', () => {
 
     it('returns an empty string for invalid dates', () => {
       expect(formatTransactionDetailDate('not-a-date')).toBe('')
+    })
+  })
+
+  describe('formatTransactionListDate', () => {
+    beforeEach(() => {
+      vi.useFakeTimers()
+      vi.setSystemTime(new Date(2026, 3, 9, 12, 0, 0))
+    })
+
+    afterEach(() => {
+      vi.useRealTimers()
+    })
+
+    it('formats today as Today', () => {
+      expect(formatTransactionListDate(createLocalIsoString(2026, 3, 9, 7, 55))).toBe(
+        'Today',
+      )
+    })
+
+    it('formats yesterday as Yesterday', () => {
+      expect(formatTransactionListDate(createLocalIsoString(2026, 3, 8, 10, 24))).toBe(
+        'Yesterday',
+      )
+    })
+
+    it('formats dates from the last 7 days as a weekday', () => {
+      expect(formatTransactionListDate(createLocalIsoString(2026, 3, 7, 8, 15))).toBe(
+        'Tuesday',
+      )
+    })
+
+    it('formats older dates as a short local date', () => {
+      expect(formatTransactionListDate(createLocalIsoString(2026, 3, 1, 8, 15))).toBe(
+        'Apr 1, 2026',
+      )
+    })
+  })
+
+  describe('getTransactionIconBackground', () => {
+    it('returns a stable background for the same id', () => {
+      expect(getTransactionIconBackground('009')).toBe(
+        getTransactionIconBackground('009'),
+      )
+    })
+
+    it('returns different palette values for different ids when hashes differ', () => {
+      expect(getTransactionIconBackground('001')).not.toBe(
+        getTransactionIconBackground('002'),
+      )
     })
   })
 })
