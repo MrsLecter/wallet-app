@@ -4,7 +4,7 @@
   align-items: center;
   gap: 14px;
   min-width: 0;
-  padding: 14px 2px;
+  padding: 12px 2px;
   color: #111111;
   text-decoration: none;
 }
@@ -24,7 +24,7 @@
 .transaction-list-item__body {
   min-width: 0;
   display: grid;
-  gap: 3px;
+  gap: 2px;
 }
 
 .transaction-list-item__title,
@@ -38,16 +38,17 @@
 
 .transaction-list-item__title {
   color: #101828;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.2;
   font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .transaction-list-item__description,
 .transaction-list-item__meta {
   color: #8d919b;
-  font-size: 0.9375rem;
-  line-height: 1.25;
+  font-size: 0.875rem;
+  line-height: 1.2;
 }
 
 .transaction-list-item__aside {
@@ -62,31 +63,31 @@
 .transaction-list-item__amount-wrap {
   display: grid;
   justify-items: end;
-  gap: 6px;
+  gap: 4px;
 }
 
 .transaction-list-item__amount {
   margin: 0;
   color: #111111;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.1;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
 }
 
 .transaction-list-item__badge {
   min-width: 38px;
-  padding: 3px 8px;
-  border-radius: 10px;
-  background: #f1f2f6;
-  color: #8d919b;
-  font-size: 0.875rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #f3f4f7;
+  color: #9599a4;
+  font-size: 0.75rem;
   line-height: 1;
   text-align: center;
   font-weight: 600;
 }
 
 .transaction-list-item__chevron {
-  color: #c5c7ce;
-  font-size: 1.125rem;
+  color: #d0d3db;
+  font-size: 1rem;
 }

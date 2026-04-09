@@ -1,10 +1,19 @@
 .transactions-feed {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   min-height: 0;
   height: 100%;
-  border-radius: 24px;
-  background: #ffffff;
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
-  overflow: hidden;
+  gap: 10px;
+}
+
+.transactions-feed__title {
+  margin: 0;
+  padding: 0 4px;
+  color: #101114;
+  font-size: clamp(1.75rem, 1.35rem + 1.2vw, 2.125rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.05em;
 }
 
 .transactions-feed--empty {
@@ -16,6 +25,12 @@
 .transactions-feed__scroll {
   height: 100%;
   min-height: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1px 0 rgba(15, 23, 42, 0.04),
+    0 10px 30px rgba(148, 163, 184, 0.12);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
@@ -41,12 +56,12 @@
 
 .transactions-feed__list {
   margin: 0;
-  padding: 8px 14px;
+  padding: 2px 14px;
   list-style: none;
 }
 
-.transactions-feed__item + .transactions-feed__item {
-  border-top: 1px solid #ececf1;
+.transactions-feed__item+.transactions-feed__item {
+  border-top: 1px solid #eceef4;
 }
 
 .transactions-feed__empty {

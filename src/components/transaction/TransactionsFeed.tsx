@@ -65,6 +65,7 @@ export function TransactionsFeed() {
         className="transactions-feed transactions-feed--empty"
         aria-label="Transactions feed"
       >
+        <h2 className="transactions-feed__title">Latest Transactions</h2>
         <p className="transactions-feed__empty">No transactions yet</p>
       </section>
     )
@@ -72,6 +73,7 @@ export function TransactionsFeed() {
 
   return (
     <section className="transactions-feed" aria-label="Transactions feed">
+      <h2 className="transactions-feed__title">Latest Transactions</h2>
       <div
         ref={scrollContainerRef}
         className="transactions-feed__scroll"
