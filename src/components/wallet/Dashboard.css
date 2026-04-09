@@ -2,7 +2,7 @@
   --dashboard-secondary-color: #8d919b;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
-  grid-template-rows: repeat(2, minmax(132px, 1fr));
+  grid-template-rows: repeat(2, minmax(90px, 1fr));
   gap: 12px;
   align-items: stretch;
 }
@@ -10,7 +10,7 @@
 .dashboard-card {
   min-width: 0;
   height: 100%;
-  padding: 16px;
+  padding: 10px;
   border-radius: 8px;
   background: #ffffff;
   box-shadow:
@@ -22,7 +22,7 @@
 .dashboard-card--points {
   display: grid;
   align-content: center;
-  gap: 8px;
+  gap: 2px;
 }
 
 .dashboard-card--status {
@@ -57,7 +57,7 @@
   margin: 0;
   color: var(--dashboard-secondary-color);
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.1;
 }
 
 .dashboard-card__points--secondary {
@@ -84,5 +84,5 @@
 .dashboard-card__content {
   display: grid;
   align-content: start;
-  gap: 6px;
+  gap: 2px;
 }

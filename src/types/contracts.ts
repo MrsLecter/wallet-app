@@ -31,4 +31,5 @@ export type TransactionsCollection = TransactionsGroup[];
 export interface Wallet {
   limit: number;
   balance: number;
+  registrationDate: string;
 }

@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0 4px;
   color: #101114;
-  font-size: clamp(1.75rem, 1.35rem + 1.2vw, 2.125rem);
+  font-size: 1.35rem;
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.05em;

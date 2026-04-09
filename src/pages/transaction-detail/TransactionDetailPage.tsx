@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { Link, useParams } from 'react-router-dom'
 
 import type { TransactionId } from '../../types'
@@ -28,7 +28,7 @@ export function TransactionDetailPage() {
           className="transaction-detail-page__back"
           aria-label="Back to transactions"
         >
-          <FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />
+          <FontAwesomeIcon icon={faAngleLeft} aria-hidden="true" />
         </Link>
 
         <div className="transaction-detail-page__empty">
@@ -51,7 +51,7 @@ export function TransactionDetailPage() {
         className="transaction-detail-page__back"
         aria-label="Back to transactions"
       >
-        <FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />
+        <FontAwesomeIcon icon={faAngleLeft} aria-hidden="true" />
       </Link>
 
       <header className="transaction-detail-page__hero">

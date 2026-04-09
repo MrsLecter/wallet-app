@@ -2,6 +2,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { calculateDailyPoints } from '../../lib/points/calculateDailyPoints'
+import { formatDailyPointsForUi } from '../../lib/points/formatDailyPointsForUi'
 import type { Wallet } from '../../types'
 import './Dashboard.css'
 
@@ -22,7 +23,8 @@ function formatCurrencyAmount(value: number) {
 
 export function Dashboard({ wallet }: DashboardProps) {
   const availableAmount = wallet.limit - wallet.balance
-  const dailyPoints = calculateDailyPoints()
+  const dailyPoints = calculateDailyPoints(wallet.registrationDate)
+  const dailyPointsLabel = formatDailyPointsForUi(dailyPoints)
 
   return (
     <section className="dashboard" aria-label="Wallet dashboard">
@@ -51,7 +53,7 @@ export function Dashboard({ wallet }: DashboardProps) {
       <article className="dashboard-card dashboard-card--points">
         <p className="dashboard-card__title">Daily Points</p>
         <p className="dashboard-card__points dashboard-card__points--secondary">
-          {dailyPoints}
+          {dailyPointsLabel}
         </p>
       </article>
     </section>
