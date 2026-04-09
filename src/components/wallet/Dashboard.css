@@ -39,7 +39,7 @@
   color: #111111;
   font-size: 0.9rem;
   line-height: 1.2;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .dashboard-card__amount,
@@ -68,8 +68,8 @@
 }
 
 .dashboard-card__icon {
-  width: 74px;
-  height: 74px;
+  width: 64px;
+  height: 64px;
   display: grid;
   place-items: center;
   border-radius: 999px;
