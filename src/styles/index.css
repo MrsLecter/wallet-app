@@ -18,11 +18,12 @@
 html,
 body,
 #root {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 button,
@@ -33,17 +34,18 @@ select {
 }
 
 .app-shell {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   padding:
     max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   background: #f3f3f7;
+  overflow: hidden;
 }
 
 .app-shell__viewport {
   width: min(100%, 390px);
-  min-height: calc(100vh - 32px);
-  min-height: calc(100dvh - 32px);
+  height: calc(100vh - 32px);
+  height: calc(100dvh - 32px);
   margin: 0 auto;
   background: #f3f3f7;
   border: 1px solid #ececf1;
@@ -52,8 +54,9 @@ select {
 }
 
 .app-shell__main {
-  min-height: 100%;
+  height: 100%;
   padding: 18px 14px 20px;
+  overflow: hidden;
 }
 
 .transaction-detail-page {
@@ -195,5 +198,9 @@ select {
 
 .transactions-list-page {
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   gap: 16px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
