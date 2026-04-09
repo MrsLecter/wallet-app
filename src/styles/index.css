@@ -192,3 +192,8 @@ select {
   margin: 0;
   color: #4b5563;
 }
+
+.transactions-list-page {
+  display: grid;
+  gap: 16px;
+}

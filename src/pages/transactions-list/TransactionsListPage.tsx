@@ -1,10 +1,10 @@
+import { Dashboard } from '../../components/wallet/Dashboard'
+import { walletData } from '../../data/contracts'
+
 export function TransactionsListPage() {
   return (
-    <section className="page-section">
-      <h1 className="page-title">Transactions List</h1>
-      <p className="page-description">
-        Here will be the list of transactions.
-      </p>
+    <section className="transactions-list-page">
+      <Dashboard wallet={walletData} />
     </section>
   )
 }

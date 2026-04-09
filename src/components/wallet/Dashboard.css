@@ -1,0 +1,86 @@
+.dashboard {
+  --dashboard-secondary-color: #8d919b;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
+  grid-template-rows: repeat(2, minmax(132px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.dashboard-card {
+  min-width: 0;
+  height: 100%;
+  padding: 16px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+}
+
+.dashboard-card--balance,
+.dashboard-card--points {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+}
+
+.dashboard-card--status {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 24px;
+  min-height: 0;
+}
+
+.dashboard-card__title {
+  margin: 0;
+  color: #111111;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.dashboard-card__amount,
+.dashboard-card__points {
+  margin: 0;
+  color: #111827;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.dashboard-card__meta,
+.dashboard-card__text {
+  margin: 0;
+  color: var(--dashboard-secondary-color);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.dashboard-card__points--secondary {
+  color: var(--dashboard-secondary-color);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.dashboard-card__icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  justify-self: end;
+  align-self: end;
+  background: #f1f2f6;
+  color: #111111;
+  box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.06);
+  font-size: 2rem;
+}
+
+.dashboard-card__content {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
