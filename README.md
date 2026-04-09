@@ -4,6 +4,17 @@ A small wallet dashboard built with React, TypeScript, and Vite.
 
 The app shows a card summary, daily points, a latest transactions feed, and a transaction details screen. It uses local mock data, client-side routing, and unit tests for the main formatting and points-calculation logic.
 
+## Screenshots
+
+### Transactions List
+
+![Transactions list screen](./transactions-list.png)
+
+### Transaction Detail
+
+![Transaction detail screen](./transaction-detail.png)
+
+
 ## Features
 
 - Wallet overview with current balance and available amount
@@ -67,12 +78,3 @@ src/
   types/                Shared TypeScript types
 ```
 
-## Screenshots
-
-### Transactions List
-
-![Transactions list screen](./transactions-list.png)
-
-### Transaction Detail
-
-![Transaction detail screen](./transaction-detail.png)
