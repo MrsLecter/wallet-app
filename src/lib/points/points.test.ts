@@ -142,10 +142,12 @@ describe('points helpers', () => {
       expect(formatDailyPointsForUi(456)).toBe('456')
     })
 
-    it('formats values from 1000 and above as rounded-up K strings', () => {
+    it('formats values from 1000 and above with standard K rounding', () => {
       expect(formatDailyPointsForUi(1000)).toBe('1K')
       expect(formatDailyPointsForUi(28745)).toBe('29K')
-      expect(formatDailyPointsForUi(1001)).toBe('2K')
+      expect(formatDailyPointsForUi(1600)).toBe('2K')
+      expect(formatDailyPointsForUi(1500)).toBe('1K')
+      expect(formatDailyPointsForUi(1300)).toBe('1K')
     })
   })
 })

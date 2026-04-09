@@ -3,5 +3,5 @@ export function formatDailyPointsForUi(points: number): string {
     return String(points)
   }
 
-  return `${Math.ceil(points / 1000)}K`
+  return `${Math.round(points / 1000)}K`
 }
