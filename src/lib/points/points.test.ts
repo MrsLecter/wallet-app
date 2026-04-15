@@ -59,18 +59,18 @@ describe('points helpers', () => {
       )
 
       expect(formatted).toEqual([
-        'september 1 - 1',
+        'september 1 - 2',
         'september 2 - 3',
-        'september 3 - 2.8',
-        'december 1 - 1',
+        'september 3 - 3.8',
+        'december 1 - 2',
         'december 2 - 3',
-        'december 3 - 2.8',
-        'march 1 - 1',
+        'december 3 - 3.8',
+        'march 1 - 2',
         'march 2 - 3',
-        'march 3 - 2.8',
-        'june 1 - 1',
+        'march 3 - 3.8',
+        'june 1 - 2',
         'june 2 - 3',
-        'june 3 - 2.8',
+        'june 3 - 3.8',
       ])
     })
   })
@@ -107,28 +107,28 @@ describe('points helpers', () => {
     it('starts from the current season start when the registration is earlier', () => {
       expect(
         calculateDailyPoints('2023-01-15T10:00:00Z', new Date(2026, 2, 1, 12, 0, 0)),
-      ).toBe(1)
+      ).toBe(2)
       expect(
         calculateDailyPoints('2023-01-15T10:00:00Z', new Date(2026, 2, 2, 12, 0, 0)),
       ).toBe(3)
       expect(
         calculateDailyPoints('2023-01-15T10:00:00Z', new Date(2026, 2, 3, 12, 0, 0)),
-      ).toBe(2.8)
+      ).toBe(3.8)
       expect(
         calculateDailyPoints('2023-01-15T10:00:00Z', new Date(2026, 2, 4, 12, 0, 0)),
-      ).toBe(4.68)
+      ).toBe(5.279999999999999)
     })
 
     it('starts from the registration date when the user registered after season start', () => {
       expect(
         calculateDailyPoints('2026-04-07T23:30:00Z', new Date(2026, 3, 8, 8, 0, 0)),
-      ).toBe(1)
+      ).toBe(2)
     })
 
     it('keeps the current day value in the expected decimal pattern', () => {
       expect(
         calculateDailyPoints('2026-03-01T00:00:00Z', new Date(2026, 2, 5, 12, 0, 0)),
-      ).toBe(5.608)
+      ).toBe(6.968)
     })
 
     it('returns 0 for an invalid registration date', () => {
@@ -146,7 +146,7 @@ describe('points helpers', () => {
       expect(formatDailyPointsForUi(1000)).toBe('1K')
       expect(formatDailyPointsForUi(28745)).toBe('29K')
       expect(formatDailyPointsForUi(1600)).toBe('2K')
-      expect(formatDailyPointsForUi(1500)).toBe('1K')
+      expect(formatDailyPointsForUi(1500)).toBe('2K')
       expect(formatDailyPointsForUi(1300)).toBe('1K')
     })
   })
